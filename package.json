@@ -20,6 +20,8 @@
     "@docusaurus/preset-classic": "3.10.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "gsap": "^3.15.0",
+    "mouse-follower": "^1.1.2",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -29,6 +31,7 @@
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
     "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.2.3",
     "typescript": "~6.0.2"
   },
   "browserslist": {

@@ -1,23 +1,84 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
   position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background: var(--dark-bg);
+}
+
+.heroContent {
+  max-width: 600px;
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.heroTitleAccent {
+  background: linear-gradient(135deg, #FF6B00 0%, #FFAD66 50%, #00FFC8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Bouncing Avatar ── */
+.bouncingAvatar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 999;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.bounceImpact {
+  animation: impactFlash 0.25s ease-out;
+}
+
+@keyframes impactFlash {
+  0% {
+    filter: drop-shadow(0 0 40px rgba(255, 107, 0, 0.6))
+            drop-shadow(0 0 80px rgba(255, 107, 0, 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(255, 107, 0, 0));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 35vh;
+  }
+
+  .heroContent {
+    padding: 3rem 1.5rem;
+  }
+
+  .bouncingAvatar {
+    width: 80px;
+    height: 80px;
+  }
 }
