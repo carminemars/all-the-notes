@@ -1,0 +1,265 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here.
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode.
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+} */
+ /* ============================================
+   Carmine's Docs — Dark + Orange palette
+   Drop this in: src/css/custom.css
+   ============================================ */
+
+/* ── Tokens ── */
+:root {
+  --orange-primary:   #FF6B00;
+  --orange-hover:     #FF8C33;
+  --orange-muted:     #FFAD66;
+  --orange-light:     #FFD4A8;
+  --orange-faint:     #FFF0E0;
+
+  --dark-bg:          #0A0A0A;
+  --dark-surface:     #1A1A1A;
+  --dark-surface-2:   #232323;
+  --dark-border:      #2E2E2E;
+  --dark-border-2:    #3D3D3D;
+
+  --text-primary:     #F5F5F5;
+  --text-secondary:   #AAAAAA;
+  --text-muted:       #6B6B6B;
+}
+
+/* ══════════════════════════════════════════
+   DARK MODE (default — forza il dark)
+   ══════════════════════════════════════════ */
+[data-theme='dark'] {
+
+  /* Navbar */
+  --ifm-navbar-background-color:        var(--dark-surface);
+  --ifm-navbar-shadow:                  0 1px 0 0 var(--dark-border);
+
+  /* Sidebar */
+  --ifm-background-surface-color:       var(--dark-surface);
+  --ifm-background-color:               var(--dark-bg);
+
+  /* Typography */
+  --ifm-color-primary:                  var(--orange-primary);
+  --ifm-color-primary-dark:             #E05E00;
+  --ifm-color-primary-darker:           #C95400;
+  --ifm-color-primary-darkest:          #A34400;
+  --ifm-color-primary-light:            var(--orange-hover);
+  --ifm-color-primary-lighter:          var(--orange-muted);
+  --ifm-color-primary-lightest:         var(--orange-light);
+
+  --ifm-font-color-base:                var(--text-primary);
+  --ifm-font-color-secondary:           var(--text-secondary);
+
+  /* Links */
+  --ifm-link-color:                     var(--orange-muted);
+  --ifm-link-hover-color:               var(--orange-hover);
+
+  /* Code blocks */
+  --ifm-code-background:                var(--dark-surface-2);
+  --ifm-pre-background:                 var(--dark-surface-2);
+  --ifm-pre-border-radius:              8px;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 107, 0, 0.1);
+
+  /* Borders & dividers */
+  --ifm-toc-border-color:               var(--dark-border);
+  --ifm-color-emphasis-300:             var(--dark-border-2);
+
+  /* Sidebar active item */
+  --ifm-menu-color-active:              var(--orange-primary);
+  --ifm-menu-color-background-active:   rgba(255, 107, 0, 0.1);
+  --ifm-menu-color-background-hover:    rgba(255, 255, 255, 0.04);
+
+  /* Scrollbar */
+  scrollbar-color: var(--dark-border-2) var(--dark-bg);
+}
+
+/* ══════════════════════════════════════════
+   LIGHT MODE
+   ══════════════════════════════════════════ */
+[data-theme='light'] {
+  --ifm-color-primary:                  #E05E00;
+  --ifm-color-primary-dark:             #C95400;
+  --ifm-color-primary-darker:           #A34400;
+  --ifm-color-primary-darkest:          #7a3200;
+  --ifm-color-primary-light:            var(--orange-primary);
+  --ifm-color-primary-lighter:          var(--orange-hover);
+  --ifm-color-primary-lightest:         var(--orange-muted);
+
+  --docusaurus-highlighted-code-line-bg: rgba(224, 94, 0, 0.08);
+}
+
+/* ══════════════════════════════════════════
+   GLOBAL OVERRIDES
+   ══════════════════════════════════════════ */
+
+/* Navbar logo / title accent */
+.navbar__brand:hover {
+  color: var(--orange-primary);
+}
+
+/* Active sidebar item pill */
+.menu__link--active {
+  border-left: 2px solid var(--orange-primary);
+  border-radius: 0 6px 6px 0;
+  font-weight: 500;
+}
+
+/* Inline code */
+code {
+  border: 0.5px solid var(--dark-border-2);
+  font-size: 0.875em;
+}
+
+/* Code block header (filename tab) */
+.prism-code {
+  border: 0.5px solid var(--dark-border);
+}
+
+/* Admonitions — accent strip in orange */
+.alert--info {
+  border-left-color: var(--orange-primary);
+}
+
+/* TOC active heading */
+.table-of-contents__link--active,
+.table-of-contents__link--active code {
+  color: var(--orange-primary);
+  font-weight: 500;
+}
+
+/* Pagination buttons */
+.pagination-nav__link {
+  border: 0.5px solid var(--dark-border);
+  transition: border-color 0.15s;
+}
+.pagination-nav__link:hover {
+  border-color: var(--orange-primary);
+}
+
+/* Search bar */
+.DocSearch-Button {
+  border: 0.5px solid var(--dark-border) !important;
+}
+.DocSearch-Button:hover {
+  border-color: var(--orange-primary) !important;
+  box-shadow: none !important;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-surface);
+  border-top: 0.5px solid var(--dark-border);
+}
+.footer__link-item:hover {
+  color: var(--orange-primary);
+}
+
+/* Breadcrumbs */
+.breadcrumbs__link:hover {
+  color: var(--orange-primary);
+  background: transparent;
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(255, 107, 0, 0.25);
+  color: var(--text-primary);
+}
+/* ── Hero gradient ── */
+.hero {
+  background: linear-gradient(135deg, #FF6B00 0%, #1A1A1A 45%, #0A0A0A 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Alone luminoso sotto l'arancione */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255,107,0,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Testo hero leggibile su dark */
+.hero__title {
+  color: #FFFFFF;
+}
+
+.hero__subtitle {
+  color: var(--orange-light);
+}
+
+/* Bottone primario */
+.hero .button--primary {
+  background: var(--orange-primary);
+  border-color: var(--orange-primary);
+  color: #fff;
+}
+
+.hero .button--primary:hover {
+  background: var(--orange-hover);
+  border-color: var(--orange-hover);
+}
+
+/* Bottone secondario (outlined) */
+.hero .button--secondary {
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.hero .button--secondary:hover {
+  border-color: var(--orange-primary);
+  color: var(--orange-primary);
+}
+.hero .button--secondary {
+  background: #0A0A0A;
+  border: 1.5px solid var(--orange-primary);
+  color: #FF6B00;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero .button--secondary:hover {
+  background: var(--orange-primary);
+  border-color: var(--orange-primary);
+  color: #0A0A0A;
+}
+
+/*Inverted text based on bg*/
+header.hero .hero__title,
+header.hero .hero__subtitle {
+  background: linear-gradient(135deg, #ffffff 0%, #FFD4A8 35%, #FF6B00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,8 @@
+{
+  "label": "gRPC",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "gRPC and RPC in general personal notes"
+  }
+}
