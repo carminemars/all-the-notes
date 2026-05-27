@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkall_the_notes=self.webpackChunkall_the_notes||[]).push([["833"],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Empty mdx","permalink":"/all-the-notes/blog/empty","unlisted":false,"date":"2026-05-27T00:00:00.000Z"}]}')}}]);

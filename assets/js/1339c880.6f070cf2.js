@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkall_the_notes=self.webpackChunkall_the_notes||[]).push([["243"],{5480(e){e.exports=JSON.parse('{"authors":[{"name":"Carmine Marsocci","title":"Software Dev","url":"https://github.com/carminemars","page":{"permalink":"/all-the-notes/blog/authors/mars"},"imageURL":"/all-the-notes/img/me-nobg.png","key":"mars","count":1}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkall_the_notes=self.webpackChunkall_the_notes||[]).push([["235"],{5514(e){e.exports=JSON.parse('{"tags":[{"label":"Hola","permalink":"/all-the-notes/blog/tags/hola","description":"Hola tag description","count":1}]}')}}]);
