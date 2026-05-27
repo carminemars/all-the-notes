@@ -1,79 +1,83 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: 'Mars notes, all the notes',
-  tagline: 'I\'m Mars and these are the notes I take on various things',
-  favicon: 'img/me-nobg.ico',
+  title: "Mars notes, all the notes",
+  tagline: "I'm Mars and these are the notes I take on various things",
+  favicon: "img/me-nobg.ico",
 
   future: {
     v4: true,
   },
 
-  url: 'https://carminemars.github.io',
-  baseUrl: '/all-the-notes/',
+  url: "https://carminemars.github.io",
+  baseUrl: "/all-the-notes/",
 
-  organizationName: 'carminemars',
-  projectName: 'all-the-notes',
-  deploymentBranch: 'gh-pages', 
-  onBrokenLinks: 'throw',
+  organizationName: "carminemars",
+  projectName: "all-the-notes",
+  deploymentBranch: "gh-pages",
+  onBrokenLinks: "throw",
   trailingSlash: false,
   markdown: {
     hooks: {
-      onBrokenMarkdownImages: 'ignore',
+      onBrokenMarkdownImages: "ignore",
     },
   },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    image: 'img/mars-logo.svg',
+    image: "img/mars-logo.svg",
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'All the notes',
+      title: "All the notes",
       // logo: {
       //   alt: 'Mars notes',
       //   src: 'img/mars-logo.svg',
       // },
+      // items: [
+      //   {to: '/docs/intro', label: 'Notes', position: 'right'},
+      //   {to: '/blog', label: 'Blog', position: 'right'},
+      // ],
       items: [
-        {to: '/docs/intro', label: 'Notes', position: 'right'},
-        {to: '/blog', label: 'Blog', position: 'right'},
+        { to: "docs/intro", label: "Notes", position: "right" },
+        { to: "blog", label: "Blog", position: "right" },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} All the notes, built with <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>`,
     },
     prism: {

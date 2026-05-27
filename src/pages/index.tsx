@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 
-function BouncingAvatar({ onBounce }: { onBounce: () => void }) {
+function BouncingAvatar({ onBounce }: { onBounce: (e: React.MouseEvent) => void }) {
   const imgRef = useRef<HTMLImageElement>(null);
   const bounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const impactRef = useRef(false);
@@ -63,27 +63,24 @@ function BouncingAvatar({ onBounce }: { onBounce: () => void }) {
     return () => { running = false; };
   }, []);
 
-  if (typeof document === 'undefined') return null;
-
-  return createPortal(
+  return (
     <img
       ref={imgRef}
-      src="/img/me-nobg.png"
+      src={useBaseUrl('/img/me-nobg.png')}
       alt="Mars avatar"
       className={styles.bouncingAvatar}
       onClick={onBounce}
-    />,
-    document.body
+    />
   );
 }
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const [booted, setBooted] = useState(false);
+  const [glitchPos, setGlitchPos] = useState<{x: number, y: number} | null>(null);
 
-  function handleAvatarClick() {
-    setBooted(true);
-    setTimeout(() => setBooted(false), 3200);
+  function handleAvatarClick(e: React.MouseEvent) {
+    setGlitchPos({ x: e.clientX, y: e.clientY });
+    setTimeout(() => setGlitchPos(null), 1800);
   }
 
   return (
@@ -103,11 +100,12 @@ export default function Home() {
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
         </div>
 
-        {booted && (
-          <div className={styles.glitch}>
-            <div className={styles.glitchLayer} data-text="OUCH!! STOP IT!" />
-            <div className={styles.glitchLayer} data-text="OUCH!! STOP IT!" />
-            <div className={styles.glitchLayer} data-text="OUCH!! STOP IT!" />
+        {glitchPos && (
+          <div
+            className={styles.glitch}
+            style={{ left: glitchPos.x, top: glitchPos.y, '--fly-y': `${-(glitchPos.y + 60)}px` } as React.CSSProperties}
+          >
+            <span className={styles.glitchLayer}>OUCH!! STOP IT!</span>
           </div>
         )}
       </section>

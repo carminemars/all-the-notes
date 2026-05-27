@@ -177,6 +177,7 @@ code {
 
   .mf-cursor {
     color: var(--orange-primary);
+    pointer-events: none;
   }
 
   .mf-cursor-text {

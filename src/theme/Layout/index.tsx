@@ -1,10 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import { useLocation } from '@docusaurus/router';
+import { gsap } from 'gsap';
 import Layout from '@theme-original/Layout';
 
 import 'mouse-follower/dist/mouse-follower.min.css';
 
 export default function LayoutWrapper({ children, ...props }: { children: ReactNode }) {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (contentRef.current) {
+      gsap.fromTo(
+        contentRef.current,
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+      );
+    }
+  }, [pathname]);
+
   useEffect(() => {
     let cursor: any;
     let currentLink: Element | null = null;
@@ -30,7 +45,6 @@ export default function LayoutWrapper({ children, ...props }: { children: ReactN
 
     async function init() {
       const MouseFollower = (await import('mouse-follower')).default;
-      const gsap = (await import('gsap')).default;
       MouseFollower.registerGSAP(gsap);
       cursor = new MouseFollower({ speed: 0.3 });
 
@@ -49,7 +63,7 @@ export default function LayoutWrapper({ children, ...props }: { children: ReactN
 
   return (
     <Layout {...props}>
-      {children}
+      <div ref={contentRef}>{children}</div>
     </Layout>
   );
 }

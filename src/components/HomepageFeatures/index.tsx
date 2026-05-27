@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 const links = [
@@ -18,11 +19,11 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.links}>
       {links.map((link) => (
-        <a key={link.title} href={link.href} className={styles.linkCard}>
+        <Link key={link.title} to={link.href} className={styles.linkCard}>
           <h3 className={styles.linkTitle}>{link.title}</h3>
           <p className={styles.linkDesc}>{link.description}</p>
           <span className={styles.linkArrow}>→</span>
-        </a>
+        </Link>
       ))}
     </section>
   );
