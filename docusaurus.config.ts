@@ -12,7 +12,7 @@ const config: Config = {
   },
 
   url: 'https://carminemars.github.io',
-  baseUrl: '/all-the-notes',
+  baseUrl: '/all-the-notes/',
 
   organizationName: 'carminemars',
   projectName: 'all-the-notes',
