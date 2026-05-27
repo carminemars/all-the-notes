@@ -11,14 +11,14 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://carminemars.github.io',
   baseUrl: '/',
 
   organizationName: 'carminemars',
   projectName: 'all-the-notes',
 
   onBrokenLinks: 'throw',
-
+  trailingSlash: false,
   markdown: {
     hooks: {
       onBrokenMarkdownImages: 'ignore',
