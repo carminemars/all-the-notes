@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__section">
-          <FooterCopyright copyright={footer.copyright} />
+          <FooterCopyright copyright={footer.copyright ?? ''} />
         </div>
         <div className="footer__section footer__section--right">
           <a

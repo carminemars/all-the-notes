@@ -30,7 +30,7 @@ function BouncingAvatar({ onBounce }: { onBounce: (e: React.MouseEvent) => void 
     img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
 
     function frame() {
-      if (!running) return;
+      if (!running || !img) return;
 
       x += dx;
       y += dy;
