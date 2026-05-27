@@ -12,11 +12,11 @@ const config: Config = {
   },
 
   url: 'https://carminemars.github.io',
-  baseUrl: '/',
+  baseUrl: '/all-the-notes',
 
   organizationName: 'carminemars',
   projectName: 'all-the-notes',
-
+  deploymentBranch: 'gh-pages', 
   onBrokenLinks: 'throw',
   trailingSlash: false,
   markdown: {
